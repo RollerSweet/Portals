@@ -15,6 +15,7 @@ collection = db['vm_requests']
 
 @vmcreator.post("/create-vm")
 async def create_vm(vm_data: dict):
+    print(vm_data)
     vm_data['status'] = 'pending'
     vm_data['creation_date'] = datetime.datetime.now()
     vm_data['last_update_date'] = datetime.datetime.now()
